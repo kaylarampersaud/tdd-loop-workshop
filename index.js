@@ -36,18 +36,10 @@ export function echoWithSpace(word, n) {
   if (n <= 0 || word.length === 0) return "";
 
   let result = "";
-  let i = 0;
-
-  while (i < n) {
-    result += word;
-
-    if (i < n - 1) {
-      result += " ";
-    }
-
-    i++;
+  for (let i = 0; i < n; i++) {
+    result += word + " ";
   }
-
+  result += word;
   return result;
 }
 
@@ -64,13 +56,9 @@ export function echoWithSpace(word, n) {
  */
 export function sumTo(n) {
   let result = 0;
-  let i = 1;
-
-  while (i <= n) {
+  for (let i = 1; i <= n; i++) {
     result += i;
-    i++;
   }
-
   return result;
 }
 
@@ -88,13 +76,9 @@ export function sumTo(n) {
  */
 export function sumFromTo(a, z) {
   let result = 0;
-  let i = a;
-
-  while (i <= z) {
+  for (let i = a; i <= z; i++) {
     result += i;
-    i++;
   }
-
   return result;
 }
 
@@ -111,10 +95,8 @@ export function sumFromTo(a, z) {
  */
 export function countdown(n) {
   let i = n;
-
-  while (i > 0) {
+  for (let i = n; i > 0; i--) {
     console.log(i);
-    i--;
   }
 }
 
@@ -131,15 +113,11 @@ export function countdown(n) {
  */
 export function sumOddsToN(n) {
   let result = 0;
-  let i = 1;
-
-  while (i <= n) {
+  for (let i = 1; i <= n; i++) {
     if (i % 2 !== 0) {
       result += i;
     }
-    i++;
   }
-
   return result;
 }
 
@@ -231,7 +209,7 @@ export function moveWater(colander, bucket) {
   while (totalWater < bucket) {
     totalWater += colander;
     colander = Math.max(1, colander - 1);
-    trips++;
+    trips += 1;
   }
 
   return trips;
@@ -254,9 +232,7 @@ export function moveWater(colander, bucket) {
  * fizzbuzz(15); // logs 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz
  */
 export function fizzbuzz(n) {
-  let i = 1;
-
-  while (i <= n) {
+  for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
       console.log("fizzbuzz");
     } else if (i % 3 === 0) {
@@ -266,6 +242,5 @@ export function fizzbuzz(n) {
     } else {
       console.log(i);
     }
-    i++;
   }
 }
